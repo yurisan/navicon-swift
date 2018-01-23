@@ -114,6 +114,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     }
     
     // 毎フレーム実行される処理
+    var gameinit = 0
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection)
     {
         DispatchQueue.main.async{
@@ -122,26 +123,31 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
              */
             let image = CameraUtil.imageFromSampleBuffer(sampleBuffer: sampleBuffer)
             
-            let faceImage = self.detector?.recognizeFace(image)
-            
-            // Debug
-            let hit = self.detector?.hit()
-            print(hit)
-            if(hit == 1){
-                let storyboard: UIStoryboard = self.storyboard!
-                let nextView = storyboard.instantiateViewController(withIdentifier: "fail") as! FailViewController
-                self.present(nextView, animated: true, completion: nil)
-            }else if(hit == 2){
-                let storyboard: UIStoryboard = self.storyboard!
-                let nextView = storyboard.instantiateViewController(withIdentifier: "success") as! SuccessViewController
-                self.present(nextView, animated: true, completion: nil)
+            if(self.gameinit < 100){
+                self.gameinit += 1
+                let faceImage = self.detector?.simpleCamera(image)
+                
+                self.imageView.image = faceImage
+            }else{
+                let faceImage = self.detector?.recognizeFace(image)
+                
+                let hit = self.detector?.hit()
+                if(hit == 1){
+                    let storyboard: UIStoryboard = self.storyboard!
+                    let nextView = storyboard.instantiateViewController(withIdentifier: "fail") as! FailViewController
+                    self.present(nextView, animated: true, completion: nil)
+                    
+                    self.imageView.image = faceImage
+                }else if(hit == 2){
+                    let storyboard: UIStoryboard = self.storyboard!
+                    let nextView = storyboard.instantiateViewController(withIdentifier: "success") as! SuccessViewController
+                    self.present(nextView, animated: true, completion: nil)
+                    
+                    self.imageView.image = faceImage
+                }
             }
-            // Debug
-            
-            self.imageView.image = faceImage
         }
     }
-    
     
 }
 
