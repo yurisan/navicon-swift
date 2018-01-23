@@ -16,9 +16,13 @@
 		DA24A0FB20165D99002C1A28 /* navicon_swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA24A0FA20165D99002C1A28 /* navicon_swiftUITests.swift */; };
 		DA24A10920165E74002C1A28 /* CameraUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA24A10820165E74002C1A28 /* CameraUtil.swift */; };
 		DA24A10F20165EBA002C1A28 /* Detector.mm in Sources */ = {isa = PBXBuildFile; fileRef = DA24A10E20165EBA002C1A28 /* Detector.mm */; };
-		DA24A11120165F07002C1A28 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA24A11020165F07002C1A28 /* opencv2.framework */; };
 		DA24A11320165F5F002C1A28 /* haarcascade_frontalface_alt.xml in Resources */ = {isa = PBXBuildFile; fileRef = DA24A11220165F5F002C1A28 /* haarcascade_frontalface_alt.xml */; };
 		DA24A11620165F96002C1A28 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA24A11520165F96002C1A28 /* AVFoundation.framework */; };
+		DA24A11B2016F773002C1A28 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA24A11A2016F773002C1A28 /* opencv2.framework */; };
+		DA24A1202016F897002C1A28 /* OpenCVUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = DA24A11F2016F897002C1A28 /* OpenCVUtil.mm */; };
+		DA24A1222016F92E002C1A28 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA24A1212016F92E002C1A28 /* CoreGraphics.framework */; };
+		DA24A1242016FB1E002C1A28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA24A1232016FB1E002C1A28 /* UIKit.framework */; };
+		DA24A1262016FC30002C1A28 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA24A1252016FC30002C1A28 /* CoreFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +60,14 @@
 		DA24A10A20165E9F002C1A28 /* navicon-swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "navicon-swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		DA24A10B20165E9F002C1A28 /* Detector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Detector.h; sourceTree = "<group>"; };
 		DA24A10E20165EBA002C1A28 /* Detector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Detector.mm; sourceTree = "<group>"; };
-		DA24A11020165F07002C1A28 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		DA24A11220165F5F002C1A28 /* haarcascade_frontalface_alt.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt.xml; sourceTree = "<group>"; };
 		DA24A11520165F96002C1A28 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DA24A11A2016F773002C1A28 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		DA24A11C2016F85F002C1A28 /* OpenCVUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVUtil.h; sourceTree = "<group>"; };
+		DA24A11F2016F897002C1A28 /* OpenCVUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVUtil.mm; sourceTree = "<group>"; };
+		DA24A1212016F92E002C1A28 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DA24A1232016FB1E002C1A28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DA24A1252016FC30002C1A28 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +75,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA24A1262016FC30002C1A28 /* CoreFoundation.framework in Frameworks */,
+				DA24A1242016FB1E002C1A28 /* UIKit.framework in Frameworks */,
+				DA24A1222016F92E002C1A28 /* CoreGraphics.framework in Frameworks */,
+				DA24A11B2016F773002C1A28 /* opencv2.framework in Frameworks */,
 				DA24A11620165F96002C1A28 /* AVFoundation.framework in Frameworks */,
-				DA24A11120165F07002C1A28 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +135,9 @@
 				DA24A10E20165EBA002C1A28 /* Detector.mm */,
 				DA24A11220165F5F002C1A28 /* haarcascade_frontalface_alt.xml */,
 				DA24A10A20165E9F002C1A28 /* navicon-swift-Bridging-Header.h */,
-				DA24A11020165F07002C1A28 /* opencv2.framework */,
+				DA24A11A2016F773002C1A28 /* opencv2.framework */,
+				DA24A11C2016F85F002C1A28 /* OpenCVUtil.h */,
+				DA24A11F2016F897002C1A28 /* OpenCVUtil.mm */,
 			);
 			path = "navicon-swift";
 			sourceTree = "<group>";
@@ -149,6 +163,9 @@
 		DA24A11420165F96002C1A28 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA24A1252016FC30002C1A28 /* CoreFoundation.framework */,
+				DA24A1232016FB1E002C1A28 /* UIKit.framework */,
+				DA24A1212016F92E002C1A28 /* CoreGraphics.framework */,
 				DA24A11520165F96002C1A28 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
@@ -293,6 +310,7 @@
 				DA24A10920165E74002C1A28 /* CameraUtil.swift in Sources */,
 				DA24A10F20165EBA002C1A28 /* Detector.mm in Sources */,
 				DA24A0DD20165D99002C1A28 /* ViewController.swift in Sources */,
+				DA24A1202016F897002C1A28 /* OpenCVUtil.mm in Sources */,
 				DA24A0DB20165D99002C1A28 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
