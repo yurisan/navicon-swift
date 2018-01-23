@@ -39,6 +39,12 @@ int hit = 0;
     return hit;
 }
 
+// ユークリッド距離
+double calcEuclidDistance(CvPoint pt1, CvPoint pt2)
+{
+    return sqrt(pow((pt1.x-pt2.x), 2) + pow((pt1.y-pt2.y) ,2));
+}
+
 //- (UIImage *)recognizeFace:(UIImage *)image{
 - (UIImage *)recognizeFace:(UIImage *)image{
     // UIImage -> cv::Mat変換
@@ -122,16 +128,75 @@ int hit = 0;
     averageX /= numCount * 1.0f;
     averageY /= numCount * 1.0f;
     
+
+    
     // 当たり判定を表示
     int fireSize = 10;
-    cv::circle(mat, cvPoint(averageX, averageY), fireSize, cv::Scalar(80,80,255), 3, 8, 0 );
+    cv::circle(mat, cvPoint(averageX, averageY), fireSize, cv::Scalar(255,0,0,255), -1);
     
-    if(averageY < 500 && averageX < 500){
-        hit = dstImage->height;
-    }else{
-        hit = 0;
+    // ゴール
+    CvPoint goalPoint;
+    goalPoint = cvPoint(40, 523);
+    
+    // 当たり判定の円リスト
+    std::list<CvPoint> collisionList;
+    std::list<CvPoint>::iterator it;
+    int collesionSize = 10;
+    
+    collisionList.clear();
+    collisionList.push_back(cvPoint(300, 62));
+    collisionList.push_back(cvPoint(250, 62));
+    collisionList.push_back(cvPoint(200, 62));
+    collisionList.push_back(cvPoint(150, 62));
+    collisionList.push_back(cvPoint(115, 62));
+    
+    collisionList.push_back(cvPoint(20, 230));
+    collisionList.push_back(cvPoint(60, 230));
+    collisionList.push_back(cvPoint(100, 230));
+    collisionList.push_back(cvPoint(140, 230));
+    collisionList.push_back(cvPoint(180, 230));
+    collisionList.push_back(cvPoint(220, 230));
+    collisionList.push_back(cvPoint(250, 230));
+    
+    collisionList.push_back(cvPoint(175, 150));
+    collisionList.push_back(cvPoint(175, 170));
+    collisionList.push_back(cvPoint(175, 190));
+    
+    collisionList.push_back(cvPoint(150, 315));
+    collisionList.push_back(cvPoint(190, 315));
+    collisionList.push_back(cvPoint(230, 315));
+    collisionList.push_back(cvPoint(270, 315));
+    collisionList.push_back(cvPoint(310, 315));
+    
+    collisionList.push_back(cvPoint(300, 315));
+    collisionList.push_back(cvPoint(300, 345));
+    collisionList.push_back(cvPoint(300, 375));
+    collisionList.push_back(cvPoint(300, 405));
+    collisionList.push_back(cvPoint(300, 435));
+    
+    collisionList.push_back(cvPoint(20, 435));
+    collisionList.push_back(cvPoint(60, 435));
+    collisionList.push_back(cvPoint(100, 435));
+    collisionList.push_back(cvPoint(140, 435));
+    collisionList.push_back(cvPoint(180, 435));
+    
+    // 当たり判定
+    hit = 0;
+    it = collisionList.begin();
+    double distance = 0.0f;
+    while (it != collisionList.end()) {
+        distance = calcEuclidDistance(cvPoint(it->x, it->y), cvPoint(averageX, averageY));
+        if (distance <= (fireSize + collesionSize)) {
+            hit = 1;
+            break;
+        }
+        it++;
     }
-    
+    distance = calcEuclidDistance(goalPoint, cvPoint(averageX, averageY));
+    if (distance <= (fireSize + collesionSize)) {
+        hit = 1;
+    }
+
     // cv::Mat -> UIImage変換
     UIImage *resultImage = MatToUIImage(mat);
     

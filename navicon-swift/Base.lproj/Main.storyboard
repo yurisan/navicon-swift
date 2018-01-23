@@ -87,6 +87,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efQ-Wy-lFG">
+                                <rect key="frame" x="141" y="594" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="もう一回遊ぶ"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="E4a-qz-6jy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="1SV-DR-4hO"/>
@@ -94,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lyn-qC-ZeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="-119"/>
+            <point key="canvasLocation" x="857" y="37"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="prV-kC-B7q">
@@ -120,4 +128,7 @@
         <image name="sasa.png" width="640" height="1136"/>
         <image name="startpoint.png" width="500" height="500"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="E4a-qz-6jy"/>
+    </inferredMetricsTieBreakers>
 </document>

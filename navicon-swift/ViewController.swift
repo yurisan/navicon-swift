@@ -127,7 +127,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             // Debug
             let hit = self.detector?.hit()
             print(hit)
-            if(hit != 480){
+            if(hit == 1){
                 let storyboard: UIStoryboard = self.storyboard!
                 let nextView = storyboard.instantiateViewController(withIdentifier: "fail") as! FailViewController
                 self.present(nextView, animated: true, completion: nil)
