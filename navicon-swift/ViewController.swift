@@ -131,6 +131,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 let storyboard: UIStoryboard = self.storyboard!
                 let nextView = storyboard.instantiateViewController(withIdentifier: "fail") as! FailViewController
                 self.present(nextView, animated: true, completion: nil)
+            }else if(hit == 2){
+                let storyboard: UIStoryboard = self.storyboard!
+                let nextView = storyboard.instantiateViewController(withIdentifier: "success") as! SuccessViewController
+                self.present(nextView, animated: true, completion: nil)
             }
             // Debug
             

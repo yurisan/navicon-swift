@@ -22,12 +22,13 @@
 		DA24A1222016F92E002C1A28 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA24A1212016F92E002C1A28 /* CoreGraphics.framework */; };
 		DA24A1242016FB1E002C1A28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA24A1232016FB1E002C1A28 /* UIKit.framework */; };
 		DA24A1262016FC30002C1A28 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA24A1252016FC30002C1A28 /* CoreFoundation.framework */; };
-		DA24A12C20170C65002C1A28 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA24A12B20170C65002C1A28 /* opencv2.framework */; };
 		DA24A12E20171BC8002C1A28 /* sasa.png in Resources */ = {isa = PBXBuildFile; fileRef = DA24A12D20171BC8002C1A28 /* sasa.png */; };
 		DA24A13020171DF9002C1A28 /* startpoint.png in Resources */ = {isa = PBXBuildFile; fileRef = DA24A12F20171DF9002C1A28 /* startpoint.png */; };
 		DA24A13220171E0A002C1A28 /* endpoint.png in Resources */ = {isa = PBXBuildFile; fileRef = DA24A13120171E0A002C1A28 /* endpoint.png */; };
 		DA24A134201721BA002C1A28 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA24A133201721BA002C1A28 /* StartViewController.swift */; };
 		DA24A13620172652002C1A28 /* FailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA24A13520172652002C1A28 /* FailViewController.swift */; };
+		DA288A4E201792C20049B571 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA288A4D201792C10049B571 /* opencv2.framework */; };
+		DA288A502017AE180049B571 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA288A4F2017AE180049B571 /* SuccessViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,12 +73,13 @@
 		DA24A1212016F92E002C1A28 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DA24A1232016FB1E002C1A28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DA24A1252016FC30002C1A28 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		DA24A12B20170C65002C1A28 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		DA24A12D20171BC8002C1A28 /* sasa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sasa.png; sourceTree = "<group>"; };
 		DA24A12F20171DF9002C1A28 /* startpoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startpoint.png; sourceTree = "<group>"; };
 		DA24A13120171E0A002C1A28 /* endpoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = endpoint.png; sourceTree = "<group>"; };
 		DA24A133201721BA002C1A28 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		DA24A13520172652002C1A28 /* FailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailViewController.swift; sourceTree = "<group>"; };
+		DA288A4D201792C10049B571 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		DA288A4F2017AE180049B571 /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +90,7 @@
 				DA24A1262016FC30002C1A28 /* CoreFoundation.framework in Frameworks */,
 				DA24A1242016FB1E002C1A28 /* UIKit.framework in Frameworks */,
 				DA24A1222016F92E002C1A28 /* CoreGraphics.framework in Frameworks */,
-				DA24A12C20170C65002C1A28 /* opencv2.framework in Frameworks */,
+				DA288A4E201792C20049B571 /* opencv2.framework in Frameworks */,
 				DA24A11620165F96002C1A28 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +142,7 @@
 				DA24A0DA20165D99002C1A28 /* AppDelegate.swift */,
 				DA24A133201721BA002C1A28 /* StartViewController.swift */,
 				DA24A13520172652002C1A28 /* FailViewController.swift */,
+				DA288A4F2017AE180049B571 /* SuccessViewController.swift */,
 				DA24A0DC20165D99002C1A28 /* ViewController.swift */,
 				DA24A0DE20165D99002C1A28 /* Main.storyboard */,
 				DA24A0E120165D99002C1A28 /* Assets.xcassets */,
@@ -150,9 +153,9 @@
 				DA24A10E20165EBA002C1A28 /* Detector.mm */,
 				DA24A11220165F5F002C1A28 /* haarcascade_frontalface_alt.xml */,
 				DA24A10A20165E9F002C1A28 /* navicon-swift-Bridging-Header.h */,
-				DA24A12B20170C65002C1A28 /* opencv2.framework */,
 				DA24A11C2016F85F002C1A28 /* OpenCVUtil.h */,
 				DA24A11F2016F897002C1A28 /* OpenCVUtil.mm */,
+				DA288A4D201792C10049B571 /* opencv2.framework */,
 			);
 			path = "navicon-swift";
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				DA24A1202016F897002C1A28 /* OpenCVUtil.mm in Sources */,
 				DA24A0DB20165D99002C1A28 /* AppDelegate.swift in Sources */,
 				DA24A134201721BA002C1A28 /* StartViewController.swift in Sources */,
+				DA288A502017AE180049B571 /* SuccessViewController.swift in Sources */,
 				DA24A13620172652002C1A28 /* FailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

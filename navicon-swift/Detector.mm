@@ -136,49 +136,62 @@ double calcEuclidDistance(CvPoint pt1, CvPoint pt2)
     
     // ゴール
     CvPoint goalPoint;
-    goalPoint = cvPoint(40, 523);
+    goalPoint = cvPoint(40, 450);
     
     // 当たり判定の円リスト
     std::list<CvPoint> collisionList;
     std::list<CvPoint>::iterator it;
-    int collesionSize = 10;
+    int collesionSize = 20;
     
     collisionList.clear();
-    collisionList.push_back(cvPoint(300, 62));
-    collisionList.push_back(cvPoint(250, 62));
-    collisionList.push_back(cvPoint(200, 62));
-    collisionList.push_back(cvPoint(150, 62));
-    collisionList.push_back(cvPoint(115, 62));
+    // sasa1
+    collisionList.push_back(cvPoint(124, 50));
+    collisionList.push_back(cvPoint(164, 50));
+    collisionList.push_back(cvPoint(224, 50));
+    collisionList.push_back(cvPoint(284, 50));
+    collisionList.push_back(cvPoint(344, 50));
     
-    collisionList.push_back(cvPoint(20, 230));
-    collisionList.push_back(cvPoint(60, 230));
-    collisionList.push_back(cvPoint(100, 230));
-    collisionList.push_back(cvPoint(140, 230));
-    collisionList.push_back(cvPoint(180, 230));
-    collisionList.push_back(cvPoint(220, 230));
-    collisionList.push_back(cvPoint(250, 230));
+    // sasa2
+    collisionList.push_back(cvPoint(30, 194));
+    collisionList.push_back(cvPoint(70, 194));
+    collisionList.push_back(cvPoint(110, 194));
+    collisionList.push_back(cvPoint(150, 194));
+    collisionList.push_back(cvPoint(190, 194));
+    collisionList.push_back(cvPoint(230, 194));
+    collisionList.push_back(cvPoint(270, 194));
+    collisionList.push_back(cvPoint(290, 194));
     
-    collisionList.push_back(cvPoint(175, 150));
-    collisionList.push_back(cvPoint(175, 170));
-    collisionList.push_back(cvPoint(175, 190));
+    // cat1
+    collisionList.push_back(cvPoint(217, 154));
+    collisionList.push_back(cvPoint(217, 134));
+    collisionList.push_back(cvPoint(190, 154));
+    collisionList.push_back(cvPoint(190, 134));
     
-    collisionList.push_back(cvPoint(150, 315));
-    collisionList.push_back(cvPoint(190, 315));
-    collisionList.push_back(cvPoint(230, 315));
-    collisionList.push_back(cvPoint(270, 315));
-    collisionList.push_back(cvPoint(310, 315));
+    // sasa3
+    collisionList.push_back(cvPoint(174, 270));
+    collisionList.push_back(cvPoint(224, 270));
+    collisionList.push_back(cvPoint(284, 270));
+    collisionList.push_back(cvPoint(344, 270));
     
-    collisionList.push_back(cvPoint(300, 315));
-    collisionList.push_back(cvPoint(300, 345));
-    collisionList.push_back(cvPoint(300, 375));
-    collisionList.push_back(cvPoint(300, 405));
-    collisionList.push_back(cvPoint(300, 435));
+    // sasa4
+    collisionList.push_back(cvPoint(340, 310));
+    collisionList.push_back(cvPoint(340, 340));
     
-    collisionList.push_back(cvPoint(20, 435));
-    collisionList.push_back(cvPoint(60, 435));
-    collisionList.push_back(cvPoint(100, 435));
-    collisionList.push_back(cvPoint(140, 435));
-    collisionList.push_back(cvPoint(180, 435));
+    // sasa5
+    collisionList.push_back(cvPoint(30, 360));
+    collisionList.push_back(cvPoint(70, 360));
+    collisionList.push_back(cvPoint(110, 360));
+    collisionList.push_back(cvPoint(150, 360));
+    collisionList.push_back(cvPoint(190, 360));
+    collisionList.push_back(cvPoint(230, 360));
+    collisionList.push_back(cvPoint(250, 360));
+    
+    // cat2
+    collisionList.push_back(cvPoint(120, 440));
+    collisionList.push_back(cvPoint(140, 440));
+    collisionList.push_back(cvPoint(120, 460));
+    collisionList.push_back(cvPoint(140, 460));
+    
     
     // 当たり判定
     hit = 0;
@@ -194,7 +207,7 @@ double calcEuclidDistance(CvPoint pt1, CvPoint pt2)
     }
     distance = calcEuclidDistance(goalPoint, cvPoint(averageX, averageY));
     if (distance <= (fireSize + collesionSize)) {
-        hit = 1;
+        hit = 2;
     }
 
     // cv::Mat -> UIImage変換
