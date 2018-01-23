@@ -34,7 +34,13 @@
     return self;
 }
 
-- (UIImage *)recognizeFace:(UIImage *)image {
+int hit = 0;
+- (int)hit{
+    return hit;
+}
+
+//- (UIImage *)recognizeFace:(UIImage *)image{
+- (UIImage *)recognizeFace:(UIImage *)image{
     // UIImage -> cv::Mat変換
     CGColorSpaceRef colorSpace = CGImageGetColorSpace(image.CGImage);
     CGFloat cols = image.size.width;
@@ -83,7 +89,7 @@
     //
     // 閾値で検出
     //
-    int threshold = 180;
+    int threshold = 200;
     for (int y=0 ; y<dstImage->height; y++) {
         for (int x=0 ; x<dstImage->width; x++) {
             if ((uchar)(dstImage->imageData[y*dstImage->width + x]) < threshold ) {
@@ -117,10 +123,14 @@
     averageY /= numCount * 1.0f;
     
     // 当たり判定を表示
-    int fireSize = 30;
+    int fireSize = 10;
     cv::circle(mat, cvPoint(averageX, averageY), fireSize, cv::Scalar(80,80,255), 3, 8, 0 );
-
     
+    if(averageY < 500 && averageX < 500){
+        hit = dstImage->height;
+    }else{
+        hit = 0;
+    }
     
     // cv::Mat -> UIImage変換
     UIImage *resultImage = MatToUIImage(mat);

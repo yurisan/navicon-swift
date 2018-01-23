@@ -124,6 +124,16 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             
             let faceImage = self.detector?.recognizeFace(image)
             
+            // Debug
+            let hit = self.detector?.hit()
+            print(hit)
+            if(hit != 480){
+                let storyboard: UIStoryboard = self.storyboard!
+                let nextView = storyboard.instantiateViewController(withIdentifier: "fail") as! FailViewController
+                self.present(nextView, animated: true, completion: nil)
+            }
+            // Debug
+            
             self.imageView.image = faceImage
         }
     }

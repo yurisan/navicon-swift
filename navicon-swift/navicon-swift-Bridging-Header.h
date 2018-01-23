@@ -9,5 +9,7 @@
 
 - (id)init;
 - (UIImage *)recognizeFace:(UIImage *)image;
+// - (int)hit:(UIImage *)image;
+ - (int)hit;
 
 @end
