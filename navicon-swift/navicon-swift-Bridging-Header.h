@@ -9,7 +9,7 @@
 
 - (id)init;
 - (UIImage *)recognizeFace:(UIImage *)image;
-- (UIImage *)simpleCamera:(UIImage *)image;
+- (UIImage *)setStartPosition:(UIImage *)image;
 - (int)hit;
 - (void)hitInit;
 

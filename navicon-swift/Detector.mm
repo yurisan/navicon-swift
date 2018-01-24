@@ -201,7 +201,7 @@ double calcEuclidDistance(CvPoint pt1, CvPoint pt2)
     return resultImage;
 }
 
-- (UIImage *)simpleCamera:(UIImage *)image{
+- (UIImage *)setStartPosition:(UIImage *)image{
     // UIImage -> cv::Mat変換
     CGColorSpaceRef colorSpace = CGImageGetColorSpace(image.CGImage);
     CGFloat cols = image.size.width;
@@ -263,8 +263,6 @@ double calcEuclidDistance(CvPoint pt1, CvPoint pt2)
     
     averageX /= numCount * 1.0f;
     averageY /= numCount * 1.0f;
-    
-    
     
     // 当たり判定を表示
     int fireSize = 10;

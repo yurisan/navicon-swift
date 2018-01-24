@@ -125,13 +125,12 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             let hit = self.detector?.hit()
             
             if(hit == 0){
-                let faceImage = self.detector?.simpleCamera(image)
+                let faceImage = self.detector?.setStartPosition(image)
                 
                 self.imageView.image = faceImage
             }else{
                 let faceImage = self.detector?.recognizeFace(image)
                 
-                //let hit = self.detector?.hit()
                 if(hit == 1){
                     self.detector?.hitInit()
                     let storyboard: UIStoryboard = self.storyboard!
