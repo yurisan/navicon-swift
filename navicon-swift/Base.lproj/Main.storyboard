@@ -18,12 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FI6-Z5-Hsc">
-                                <rect key="frame" x="164" y="688" width="46" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="w9n-Wr-ajg">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bT-w9-dMQ">
+                                <rect key="frame" x="117" y="700" width="142" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="遊んでみる">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.31372550129999999" blue="0.89019608500000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="0sn-mF-IF0"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="gsN-hz-eAx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -156,11 +163,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Image" width="640" height="1136"/>
         <image name="endpoint.png" width="500" height="500"/>
         <image name="sasa.png" width="640" height="1136"/>
         <image name="startpoint.png" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WVn-7S-lFB"/>
+        <segue reference="gsN-hz-eAx"/>
     </inferredMetricsTieBreakers>
 </document>
