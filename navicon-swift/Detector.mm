@@ -34,10 +34,16 @@
     return self;
 }
 
-int hit = 0;
+int hit;
+- (void)hitInit{
+    hit = 0;
+}
+
 - (int)hit{
     return hit;
 }
+
+int threshold = 150;
 
 // ユークリッド距離
 double calcEuclidDistance(CvPoint pt1, CvPoint pt2)
@@ -76,7 +82,6 @@ double calcEuclidDistance(CvPoint pt1, CvPoint pt2)
     //
     // 閾値で検出
     //
-    int threshold = 200;
     for (int y=0 ; y<dstImage->height; y++) {
         for (int x=0 ; x<dstImage->width; x++) {
             if ((uchar)(dstImage->imageData[y*dstImage->width + x]) < threshold ) {
@@ -175,7 +180,6 @@ double calcEuclidDistance(CvPoint pt1, CvPoint pt2)
     
     
     // 当たり判定
-    hit = 0;
     it = collisionList.begin();
     double distance = 0.0f;
     while (it != collisionList.end()) {
@@ -228,7 +232,6 @@ double calcEuclidDistance(CvPoint pt1, CvPoint pt2)
     //
     // 閾値で検出
     //
-    int threshold = 200;
     for (int y=0 ; y<dstImage->height; y++) {
         for (int x=0 ; x<dstImage->width; x++) {
             if ((uchar)(dstImage->imageData[y*dstImage->width + x]) < threshold ) {
@@ -265,7 +268,17 @@ double calcEuclidDistance(CvPoint pt1, CvPoint pt2)
     
     // 当たり判定を表示
     int fireSize = 10;
-    cv::circle(mat, cvPoint(averageX, averageY), fireSize, cv::Scalar(255,0,0,255), -1);
+    cv::circle(mat, cvPoint(averageX, averageY), fireSize, cv::Scalar(0,0,255,255), -1);
+    
+    // スタート判定
+    CvPoint startPoint;
+    startPoint = cvPoint(23, 23);
+    int collesionSize = 20;
+    double distance = 0.0f;
+    distance = calcEuclidDistance(startPoint, cvPoint(averageX, averageY));
+    if (distance <= (fireSize + collesionSize)) {
+        hit = 3;
+    }
     
     // cv::Mat -> UIImage変換
     UIImage *resultImage = MatToUIImage(mat);

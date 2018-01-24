@@ -11,5 +11,6 @@
 - (UIImage *)recognizeFace:(UIImage *)image;
 - (UIImage *)simpleCamera:(UIImage *)image;
 - (int)hit;
+- (void)hitInit;
 
 @end

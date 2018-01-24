@@ -122,29 +122,33 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
              *  ここでSampleBufferからUIImageを作成し、imageViewへ反映させる
              */
             let image = CameraUtil.imageFromSampleBuffer(sampleBuffer: sampleBuffer)
+            let hit = self.detector?.hit()
             
-            if(self.gameinit < 100){
-                self.gameinit += 1
+            if(hit == 0){
                 let faceImage = self.detector?.simpleCamera(image)
                 
                 self.imageView.image = faceImage
             }else{
                 let faceImage = self.detector?.recognizeFace(image)
                 
-                let hit = self.detector?.hit()
+                //let hit = self.detector?.hit()
                 if(hit == 1){
+                    self.detector?.hitInit()
                     let storyboard: UIStoryboard = self.storyboard!
                     let nextView = storyboard.instantiateViewController(withIdentifier: "fail") as! FailViewController
                     self.present(nextView, animated: true, completion: nil)
                     
                     self.imageView.image = faceImage
                 }else if(hit == 2){
+                    self.detector?.hitInit()
                     let storyboard: UIStoryboard = self.storyboard!
                     let nextView = storyboard.instantiateViewController(withIdentifier: "success") as! SuccessViewController
                     self.present(nextView, animated: true, completion: nil)
                     
                     self.imageView.image = faceImage
                 }
+                
+                self.imageView.image = faceImage
             }
         }
     }
